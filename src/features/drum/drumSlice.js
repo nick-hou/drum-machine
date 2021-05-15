@@ -6,7 +6,7 @@ import {
 } from './drumFunctions'
 
 const initialState = {
-  power: 1,
+  power: true,
   volume: 100,
   track: 'A',
   text: ''

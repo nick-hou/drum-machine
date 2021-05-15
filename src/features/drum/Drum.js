@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   flipPower,
@@ -6,12 +6,14 @@ import {
 } from './drumSlice';
 import { Button } from './Button'
 
-export function Drum() {
+export const Drum = () => {
   // the Drum component is just a wrapper for the keys and buttons. All the logic is handled by the redux state, and all the actions are
   // called from the buttons, so there is no state (or dispatch or selection) necessary for the Drum component.
 
-  const keysUsed = ['Q','W','E','A','S','D','Z','X','C'];
-
+  const dispatch = useDispatch();
+  // const keysUsed = ['Q','W','E','A','S','D','Z','X','C'];
+  const powerStatus = useSelector(state => state.drum.power)
+  console.log(powerStatus)
   return (
     <div className="drumbox">
       <div className="row boxRow">
@@ -33,7 +35,12 @@ export function Drum() {
           </div>
         </div>
         <div className="col">
-
+          <button
+            className="powerButton"
+            onClick={() => dispatch(flipPower())}
+          >
+            power: {powerStatus ? 'ON' : 'OFF'}
+          </button>
         </div>
       </div>
     </div>
