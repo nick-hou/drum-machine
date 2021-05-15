@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import drumReducer from '../features/drum/drumSlice';
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
+    drum: drumReducer,
   },
 });

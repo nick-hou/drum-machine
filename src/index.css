@@ -11,3 +11,34 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.drumbox {
+  background-color: #888888;
+  width: 70vw;
+  height: 50vh;
+  margin: 25vh auto;
+  padding: 0;
+}
+
+.row {
+  margin: 0;
+}
+
+.boxRow {
+  height: 100%;
+}
+
+.btnRow {
+  height: 33%;
+  padding: 20px;
+}
+
+.col {
+  padding: 0;
+  align-items: center;
+}
+
+.drumButton {
+  position: relative;
+  width: 25%;
+}
