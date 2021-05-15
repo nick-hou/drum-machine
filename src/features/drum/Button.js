@@ -1,10 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 // The button component is only responsible for dispatching the keypress action. Any logic (including power, volume, side) is handled by the redux state reducers
 import { useDispatch } from 'react-redux'
 import { pressKey } from './drumSlice'
 
 export function Button(props) {
   const dispatch = useDispatch()
+
+  // Adding the event listener here simplifies our logic a bit, since we can
+  // check directly in the button compmonent if the keypress matches a button
+  useEffect(() => {
+    const handleKeyPress = e => {
+      if(e.key.toUpperCase() === props.letter) {
+        dispatch(pressKey(props.letter))
+      }
+    }
+    document.addEventListener("keypress", handleKeyPress)
+  }, [])
 
   return (
     <button

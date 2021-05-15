@@ -34,6 +34,7 @@ export const drumSlice = createSlice({
 
     flipPower: (state, action) => {
       // I know this is terrible for a redux app, but this is in createSlice so it's okay
+      if(state.power) state.text = ''
       state.power = !state.power
     },
 

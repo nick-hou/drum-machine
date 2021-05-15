@@ -6,14 +6,14 @@ import {
 } from './drumSlice';
 import { Button } from './Button'
 
-export const Drum = () => {
-  // the Drum component is just a wrapper for the keys and buttons. All the logic is handled by the redux state, and all the actions are
-  // called from the buttons, so there is no state (or dispatch or selection) necessary for the Drum component.
 
+export const Drum = () => {
   const dispatch = useDispatch();
   // const keysUsed = ['Q','W','E','A','S','D','Z','X','C'];
   const powerStatus = useSelector(state => state.drum.power)
-  console.log(powerStatus)
+  const lastSoundPlayed = useSelector(state => state.drum.text)
+  const trackStatus = useSelector(state => state.drum.track)
+
   return (
     <div className="drumbox">
       <div className="row boxRow">
@@ -40,6 +40,15 @@ export const Drum = () => {
             onClick={() => dispatch(flipPower())}
           >
             power: {powerStatus ? 'ON' : 'OFF'}
+          </button>
+          <div className="soundText">
+            {lastSoundPlayed}
+          </div>
+          <button
+            className="trackButton"
+            onClick={() => dispatch(flipTrack())}
+          >
+            Track: {trackStatus}
           </button>
         </div>
       </div>

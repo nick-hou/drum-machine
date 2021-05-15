@@ -7,15 +7,15 @@ export const playSound = (fileName, volume) => {
 }
 
 const keys = {
-  'Q': ['hi-hat 1', 'hi-hat 2'],
-  'W': ['hi-hat 1', 'hi-hat 2'],
-  'E': ['hi-hat 1', 'hi-hat 2'],
-  'A': ['hi-hat 1', 'hi-hat 2'],
-  'S': ['hi-hat 1', 'hi-hat 2'],
-  'D': ['hi-hat 1', 'hi-hat 2'],
-  'Z': ['hi-hat 1', 'hi-hat 2'],
-  'X': ['hi-hat 1', 'hi-hat 2'],
-  'C': ['hi-hat 1', 'hi-hat 2'],
+  'Q': ['Heater 1', 'Chord 1'],
+  'W': ['Heater 2', 'Chord 2'],
+  'E': ['Heater 3', 'Chord 3'],
+  'A': ['Heater 4', 'Shaker'],
+  'S': ['Clap', 'Open HH'],
+  'D': ['Open HH', 'Closed HH'],
+  'Z': ["Kick n' Hat", 'Punchy Kick'],
+  'X': ['Kick', 'Side Stick'],
+  'C': ['Closed HH', 'Snare'],
 }
 
 export const keyLookup = (keyPressed, track) => {
