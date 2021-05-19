@@ -34,16 +34,24 @@ export const Drum = () => {
             <Button id="Cbtn" letter="C" />
           </div>
         </div>
-        <div className="col">
+
+
+        <div className="col align-self-center display-col">
           <button
             className="powerButton"
             onClick={() => dispatch(flipPower())}
           >
-            power: {powerStatus ? 'ON' : 'OFF'}
+            Power: {powerStatus ? 'ON' : 'OFF'}
           </button>
-          <div className="soundText">
+
+          <br /><br /><br /><br />
+
+          <p className="soundText">
             {lastSoundPlayed}
-          </div>
+          </p>
+
+          <br/><br /><br />
+
           <button
             className="trackButton"
             onClick={() => dispatch(flipTrack())}
