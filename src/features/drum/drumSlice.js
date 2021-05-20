@@ -2,13 +2,14 @@ import { createSlice } from '@reduxjs/toolkit';
 import {
   flashButton,
   playSound,
-  keyLookup
+  keyLookup,
+  keys
 } from './drumFunctions'
 
 const initialState = {
   power: true,
   volume: 100,
-  track: 'A',
+  track: '0',
   text: ''
 };
 
@@ -24,9 +25,7 @@ export const drumSlice = createSlice({
         // TODO
         flashButton(keyPressed)
         // play sound
-        // TODO
-        const mp3FN = keyPressed + '_' + state.track + '.mp3'
-        playSound(mp3FN, state.volume)
+        playSound(keyPressed, state.track, state.volume)
         // update text box
         state.text = keyLookup(keyPressed, state.track)
       }
@@ -39,9 +38,7 @@ export const drumSlice = createSlice({
     },
 
     flipTrack: (state, action) => {
-      state.track = (state.track === 'A')
-        ? 'B'
-        : 'A'
+      state.track = 1 - state.track
     }
   },
   // The `extraReducers` field lets the slice handle actions defined elsewhere,

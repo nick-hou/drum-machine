@@ -56,7 +56,7 @@ export const Drum = () => {
             className="trackButton"
             onClick={() => dispatch(flipTrack())}
           >
-            Track: {trackStatus}
+            Track: {trackStatus ? 'B' : 'A'}
           </button>
         </div>
       </div>
