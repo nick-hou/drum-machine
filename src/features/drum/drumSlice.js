@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
 import {
-  flashButton,
   playSound,
   keyLookup
 } from './drumFunctions'
@@ -20,9 +19,7 @@ export const drumSlice = createSlice({
     pressKey: (state, action) => {
       const keyPressed = action.payload;
       if(state.power) {
-        // play flash animation
-        // TODO
-        flashButton(keyPressed)
+        // button flash is done in the Button component
         // play sound
         playSound(keyPressed, state.track, state.volume)
         // update text box

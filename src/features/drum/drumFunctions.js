@@ -1,7 +1,3 @@
-export const flashButton = (keyPressed) => {
-  console.log(keyPressed)
-}
-
 const keys = {
   'Q': ['Heater 1', 'Chord 1'],
   'W': ['Heater 2', 'Chord 2'],
@@ -58,7 +54,6 @@ const sounds = {
 export const playSound = (keyPressed, track, newVolume) => {
   var snd = sounds[keyPressed][track === 'A' ? 0 : 1]
   snd.volume = newVolume/100
-  console.log(snd.volume)
   snd.currentTime = 0
   snd.play()
 }
