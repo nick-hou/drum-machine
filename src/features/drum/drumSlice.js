@@ -2,14 +2,13 @@ import { createSlice } from '@reduxjs/toolkit';
 import {
   flashButton,
   playSound,
-  keyLookup,
-  keys
+  keyLookup
 } from './drumFunctions'
 
 const initialState = {
   power: true,
   volume: 100,
-  track: '0',
+  track: 'A',
   text: ''
 };
 
@@ -38,7 +37,14 @@ export const drumSlice = createSlice({
     },
 
     flipTrack: (state, action) => {
-      state.track = 1 - state.track
+      state.track = (state.track === 'A')
+        ? 'B'
+        : 'A'
+    },
+
+    setVolume: (state, action) => {
+      state.volume = parseInt(action.payload);
+      state.text = 'Volume: ' + state.volume
     }
   },
   // The `extraReducers` field lets the slice handle actions defined elsewhere,
@@ -46,6 +52,6 @@ export const drumSlice = createSlice({
   // extraReducers: ,
 });
 
-export const { pressKey, flipPower, flipTrack } = drumSlice.actions;
+export const { pressKey, flipPower, flipTrack, setVolume } = drumSlice.actions;
 
 export default drumSlice.reducer;
