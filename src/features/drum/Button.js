@@ -28,7 +28,7 @@ export function Button(props) {
       }
     }
     document.addEventListener("keypress", handleKeyPress)
-  }, [])
+  })
 
   return (
     <button

@@ -18,7 +18,7 @@ export const Drum = () => {
   return (
     <div className="drumbox">
       <div className="row boxRow">
-        <div className="col">
+        <div className="col-8">
           <div className="row btnRow justify-content-around">
             <Button id="Qbtn" letter="Q" />
             <Button id="Wbtn" letter="W" />
@@ -37,7 +37,7 @@ export const Drum = () => {
         </div>
 
 
-        <div className="col align-self-center display-col">
+        <div className="col-4 align-self-center display-col">
           <button
             className="powerButton"
             onClick={() => dispatch(flipPower())}
